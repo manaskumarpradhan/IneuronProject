@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/getdata', methods=['POST'])
+@application.route('/getdata', methods=['POST'])
 def get_data():
     # get the data_source
     data_source = request.form['ds']
@@ -17,4 +17,4 @@ def get_data():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
